@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Detalhes do Produto</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo"><a href="index.html">LOJA</a></h1>
+      <div id="btn-carrinho" class="cart-icon">
+        <span class="material-symbols-outlined" style="font-size:30px;">shopping_bag</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <main id="detalhe-produto-container">
+      <div>
+        <img id="main-product-image" src="" alt="Imagem do Produto">
+        <div class="thumbnail-gallery"></div>
+      </div>
+      <div class="product-info">
+        <h2 id="product-name">Carregando...</h2>
+        <div id="product-price" class="price">R$ 0,00</div>
+        <p id="product-description"></p>
+
+        <div class="quantity-selector">
+          <button id="btn-diminuir" class="btn">-</button>
+          <input type="number" id="quantity-input" value="1" readonly>
+          <button id="btn-aumentar" class="btn">+</button>
+        </div>
+
+        <button id="btn-add-carrinho" class="btn" style="width:100%;">Adicionar ao Carrinho</button>
+      </div>
+    </main>
+
+    <div class="chart-container" style="margin-top: 50px;">
+      <canvas id="graficoProduto" style="max-height: 400px; width: 100%;"></canvas>
+    </div>
+  </div>
+
+  <footer class="footer">© 2024 Loja</footer>
+
+  <div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+      <span class="close-carrinho close">&times;</span>
+      <h2>Meu Carrinho</h2>
+      <div id="lista-carrinho"></div>
+      <div style="margin-top:10px;">
+        <div class="resumo-linha"><span>Subtotal</span><span id="resumo-subtotal">R$ 0,00</span></div>
+        <div class="resumo-linha total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
+        <button id="btn-finalizar" class="btn" style="width:100%; margin-top:10px;">Finalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-compra" class="modal">
+    <div class="modal-content" style="text-align:center;">
+      <span class="close">&times;</span>
+      <img id="qrcode" src="" alt="QR Code Pix">
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>

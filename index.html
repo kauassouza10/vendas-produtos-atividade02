@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mini E-commerce</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet" />
+
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+    integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+    integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
+</head>
+
+<body>
+  <header class="header">
+    <div class="header-container">
+      <h1 class="logo"><a href="index.html">LOJA</a></h1>
+      <div class="search-bar">
+        <span class="material-symbols-outlined">search</span>
+        <input type="search" placeholder="Buscar...">
+      </div>
+      <div id="btn-carrinho" class="cart-icon">
+        <span class="material-symbols-outlined" style="font-size:30px;">shopping_bag</span>
+        <span id="cart-count">0</span>
+      </div>
+    </div>
+  </header>
+
+  <div class="container">
+    <section class="banner"><img src="bannerloja.png" alt="Banner"
+        onerror="this.src='https://via.placeholder.com/1200x250?text=Banner+Loja'"></section>
+    <h2 style="border-bottom:2px solid #eee; padding-bottom:10px; margin:20px 0;">Destaques</h2>
+    <main id="produtos-container"></main>
+    <button id="btn-carregar" class="btn" style="display:block; margin:20px auto; background: #1144b3;">Carregar mais</button>
+  </div>
+  <section class="area-mapa-completa">
+    <div class="cabecalho-mapa">
+      <h2>Onde Estamos / Entrega</h2>
+      <p>Veja sua localização para calcularmos o frete.</p>
+      <button id="btn-geo" class="btn" style="margin-top:10px; background: #1144b3;">Ver Minha Localização</button>
+    </div>
+    <div id="map"></div>
+  </section>
+
+  <footer class="footer">© 2024 Loja</footer>
+
+  <div id="modal-carrinho" class="modal">
+    <div class="modal-content">
+      <span class="close-carrinho close">&times;</span>
+      <h2>Meu Carrinho</h2>
+      <div id="lista-carrinho" style="max-height:300px; overflow-y:auto;"></div>
+      <div style="background:#f9f9f9; padding:15px; margin-top:10px;">
+        <div class="resumo-linha"><span>Subtotal</span><span id="resumo-subtotal">R$ 0,00</span></div>
+        <div class="resumo-linha"><span>Frete</span><span>R$ 15,00</span></div>
+        <div class="resumo-linha" style="color:red;"><span>Desconto</span><span>-R$ 20,00</span></div>
+        <div class="resumo-linha total"><span>Total</span><span id="resumo-total">R$ 0,00</span></div>
+        <button id="btn-finalizar" class="btn" style="width:100%; margin-top:10px;">Finalizar</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="modal-compra" class="modal">
+    <div class="modal-content" style="text-align:center;">
+      <span class="close">&times;</span>
+      <h2>Pagamento via Pix</h2>
+      <img id="qrcode" src="" alt="QR Code" style="margin:20px 0;">
+      <p>Escaneie para pagar.</p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+
+</html>
